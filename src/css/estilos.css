@@ -82,6 +82,7 @@ main .listagem-pokemon{
   gap: 30px;
 
   justify-content: center;
+  margin-top: 15px;
 }
 
 main .cartao-pokemon{
@@ -98,6 +99,8 @@ main .cartao-pokemon{
 
   border-radius: 15px;
   transition: 0.2s ease-in-out;
+
+  gap: 15px;
 }
 
 main .cartao-pokemon:hover{

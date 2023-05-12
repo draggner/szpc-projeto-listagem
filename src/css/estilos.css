@@ -1,0 +1,179 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  /*width: largura*/
+  max-width: 1280px; /*Largura maxima dos elementos*/
+  margin: 0 auto;
+  /* Acima é uma forma de abreviar os elementos, ou seja o primeiro parametro é 0 em cima e 0 em baixo, enquanto que o auto é na esquerda e direita.
+  Se caso fosse: 
+  margin 0, 0, auto, auto;
+  
+  Seque a mesma analogia, o primeiro é cima, segundo baixo, o terceiro esquerda e o quarto direita.
+ */
+ background-color: #5e5b5bad;
+ color: #333333;
+}
+
+/*PATRTE para mudança de tema*/
+body.modo-escuro{
+  /*Conceito de espefificade*/
+  background-color: #212121;
+  color: #f5f5f5;
+  /*VARIAVEIS NO CSS*/
+}
+
+header{
+  /* background-color: green; dar para utilizar esse conceito para identiifcar ou imprimir o elemento. No css pode-se utilizar isso*/
+
+  /* 1 - esse conceito pode ser aplicado: */
+  display: flex;
+  /* Vai alinhar os elementos: */
+  justify-content: space-between;
+  /* para dar elementos internos nos elementos: */
+  padding: 25px;
+}
+
+/* Quando se dar a tag com espaço e uma classe .Logo - Estiliza os elementos dentro do header que tenha uma classe loggo, aplique essas estilizações. */
+
+/* header .Logo{
+  width: 30px;
+}
+
+
+header .imagem-botao{
+  width: 30px;
+}  Em vez de ser dessa forma para amenizar as mesmas estilizações desses elementos, que recebem os mesmos parametros, pode-se inserir da seguinte forma:*/
+
+
+header .logo,
+header .imagem-botao{
+  width: 30px;
+  
+  transition: 0.2s ease-in-out;
+}
+
+/* 1- conceito de flex-box tem um conceito é que os elementos tem parent e child. A tag child tem um parent e o child é um parent de outros elementos que são child e assim sucessivamente. */
+
+/*PARTE DO SEGUNDO BOTÃO*/
+header #botao-alterar-tema{
+  background: none;
+  border: none;
+  /* cursor: pointer; ESSA PARTE É REMOVIDA PORQUE COM O USO DO HOVER TEM UM CURSOR:PONTER. */
+}
+
+/* CONCEITO DE PSEUDOCLASS */
+header .logo:hover,
+header .imagem-botao:hover,
+main .cartao-pokemon:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+main{
+  padding: 25px;
+}
+
+main .listagem-pokemon{
+  display: flex;
+
+  /* COmo que não definidos a largura desse elemento é necessário inserir .. flex-wrap: wrap */
+  flex-wrap: wrap;
+
+  /* para inserir espaçamento dentre todos os elementos, pode-se utilizar o gap, essa propriedade mexe e engloba todos os filhos. */
+  gap: 30px;
+
+  justify-content: center;
+  margin-top: 15px;
+}
+
+main .cartao-pokemon{
+  background-color: #d8e3ec;
+  /* Definindo largura, não terá um scroll */
+  width: 200px;
+  padding: 15px;
+  
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+
+  gap: 15px;
+}
+
+main .cartao-pokemon:hover{
+  background-color: #96d9d6;
+}
+
+.modo-escuro .cartao-pokemon:hover{
+  background-color: #a8a8a8;
+}
+
+
+main .cartao-pokemon .informacoes{
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid #333333;
+  border-radius: 10px;
+}
+
+main .cartao-pokemon .informacoes span{
+
+  padding: 5px;
+
+  text-transform: uppercase;
+
+  font-size: 17px;
+}
+
+main .cartao-pokemon .gif{
+  width: 90px;
+  height: 90px;
+
+
+}
+
+/* ESTILIZAÇÕES DOS TIPOS */
+main .cartao-pokemon .tipos{
+  display: flex;
+
+  gap: 15px;
+}
+
+main .cartao-pokemon .tipo {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.grama {
+  background-color: #7ac74c;
+}
+.venenoso {
+  background-color: #df67ddfb;
+}
+.fogo {
+  background-color: #ee8130;
+}
+.agua {
+  background-color: #6390f0;
+}
+.inseto {
+  background-color: #a6b91a;
+}
+.voador{
+  background-color: #a3dcec;
+}
+
+main .descricao{
+  max-height: 80px;
+  /* 
+  overflow-y: hidden; */
+  overflow-y: scroll;
+  
+  font-size: 14px;
+
+  padding-right: 10px;
+}
